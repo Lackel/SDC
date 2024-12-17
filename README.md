@@ -1,7 +1,7 @@
-# Transfer and Alignment Network (TAN)
-Data and code for paper titled [Transfer and Alignment Network for Generalized Category Discovery](https://arxiv.org/abs/2312.16467) (AAAI 2024 paper)
+# Self-Debiasing Calibration (SDC)
+Data and code for paper titled [Unleashing the Potential of Model Bias for Generalized Category Discovery](https://arxiv.org/abs/2312.16467) (AAAI 2025 paper)
 
-*Generalized Category Discovery (GCD)* is a crucial task that aims to recognize both known and novel categories from an unlabeled dataset by leveraging another labeled dataset with only known categories. In this paper, we propose a Transfer and Alignment Network (TAN), which incorporates two knowledge transfer mechanisms (Prototype-to-Prototype Transfer and Prototype-to-Instance Transfer) to calibrate the biased knowledge and two feature alignment mechanisms (Instance-to-Prototype Alignment and Instance-to-Instance Alignment) to learn discriminative features.
+*Generalized Category Discovery (GCD)* is a significant and complex task that aims to identify both known and undefined novel categories from a set of unlabeled data, leveraging another labeled dataset containing only known categories. The primary challenges stem from model bias induced by pre-training on only known categories and the lack of precise supervision for novel ones, leading to *category bias* towards known categories and *category confusion* among different novel categories. To address these challenges, we propose a novel framework named *Self-Debiasing Calibration (SDC)*, which provides a novel insight into unleashing the potential of the bias to facilitate novel category learning. SDC dynamically adjusts the output logits of the current training model using the output of the biased model. This approach produces less biased logits to effectively address the issue of category bias towards known categories, and generates more accurate pseudo labels for unlabeled data, thereby mitigating category confusion for novel categories. Experiments on three benchmark datasets show that SDC outperforms SOTA methods, especially in the identification of novel categories.
 
 
 ## Contents
@@ -20,7 +20,7 @@ Data and code for paper titled [Transfer and Alignment Network for Generalized C
 [7. Citation](#citation)
 
 ## Data
-We performed experiments on three public datasets: [clinc](https://aclanthology.org/D19-1131/), [banking](https://aclanthology.org/2020.nlp4convai-1.5/) and [stackoverflow](https://aclanthology.org/W15-1509/), which have been included in our repository in the data folder ' ./data '.
+We performed experiments on three public datasets: [clinc](https://aclanthology.org/D19-1131/), [banking](https://aclanthology.org/2020.nlp4convai-1.5/) and [hwu](https://arxiv.org/abs/1903.05566), which have been included in our repository in the data folder ' ./data '.
 
 ## Model
 An overview of our model is shown in the figure.
@@ -30,12 +30,11 @@ An overview of our model is shown in the figure.
 
 ## Requirements
 * python==3.8
-* pytorch==1.11.0
-* transformers==4.19.2
-* scipy==1.8.0
-* numpy==1.21.6
-* scikit-learn==1.1.1
-* pytorch-pretrained-bert==0.6.2
+* pytorch==1.12.0
+* transformers==4.26.1
+* scipy==1.10.1
+* numpy==1.23.5
+* scikit-learn==1.2.1
 
 ## Running
 Pre-training, training and testing our model through the bash scripts:
@@ -52,8 +51,10 @@ It should be noted that the experimental results may be different because of the
 
 ## Thanks
 Some code references the following repositories:
+* [KTN](https://github.com/yibai-shi/KTN)
 * [DPN](https://github.com/Lackel/DPN)
-* [DeepAligned](https://github.com/thuiar/DeepAligned-Clustering)
+* [TAN](https://github.com/Lackel/TAN)
+
 
 ## Citation
 If our paper or code is helpful to you, please consider citing our paper:

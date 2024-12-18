@@ -1,5 +1,5 @@
 # Self-Debiasing Calibration (SDC)
-Data and code for paper titled [Unleashing the Potential of Model Bias for Generalized Category Discovery](https://arxiv.org/abs/2312.16467) (AAAI 2025 paper)
+Data and code for paper titled [Unleashing the Potential of Model Bias for Generalized Category Discovery](https://arxiv.org/abs/2412.12501) (AAAI 2025 paper)
 
 *Generalized Category Discovery (GCD)* is a significant and complex task that aims to identify both known and undefined novel categories from a set of unlabeled data, leveraging another labeled dataset containing only known categories. The primary challenges stem from model bias induced by pre-training on only known categories and the lack of precise supervision for novel ones, leading to *category bias* towards known categories and *category confusion* among different novel categories. To address these challenges, we propose a novel framework named *Self-Debiasing Calibration (SDC)*, which provides a novel insight into unleashing the potential of the bias to facilitate novel category learning. SDC dynamically adjusts the output logits of the current training model using the output of the biased model. This approach produces less biased logits to effectively address the issue of category bias towards known categories, and generates more accurate pseudo labels for unlabeled data, thereby mitigating category confusion for novel categories. Experiments on three benchmark datasets show that SDC outperforms SOTA methods, especially in the identification of novel categories.
 
@@ -59,13 +59,12 @@ Some code references the following repositories:
 ## Citation
 If our paper or code is helpful to you, please consider citing our paper:
 ```
-@inproceedings{an2024transfer,
-  title={Transfer and alignment network for generalized category discovery},
-  author={An, Wenbin and Tian, Feng and Shi, Wenkai and Chen, Yan and Wu, Yaqiang and Wang, Qianying and Chen, Ping},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume={38},
-  number={10},
-  pages={10856--10864},
-  year={2024}
+@misc{an2024unleashingpotentialmodelbias,
+      title={Unleashing the Potential of Model Bias for Generalized Category Discovery}, 
+      author={Wenbin An and Haonan Lin and Jiahao Nie and Feng Tian and Wenkai Shi and Yaqiang Wu and Qianying Wang and Ping Chen},
+      year={2024},
+      eprint={2412.12501},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}, 
 }
 ```
